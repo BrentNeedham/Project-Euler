@@ -17,7 +17,7 @@ namespace ProjectEuler
             var stopwatch = new System.Diagnostics.Stopwatch();
             stopwatch.Start();
             
-            Console.WriteLine(new MultiplesOfThreeAndFive().Solution(Solution.Revised));
+            Console.WriteLine(new EvenFibonacciNumbers().Solution(Solution.First));
             
             stopwatch.Stop();
             Console.Write(stopwatch.ElapsedMilliseconds);

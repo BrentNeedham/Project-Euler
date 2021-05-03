@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace ProjectEuler.Problems
 {
@@ -62,7 +63,7 @@ namespace ProjectEuler.Problems
             var numberTwoSum = SumOfAllDivisibleNumbers(maximumValue, numberTwo);
             var leastCommonMultipleSum = SumOfAllDivisibleNumbers(maximumValue, LeastCommonMultiple(numberOne, numberTwo));
 
-            return (numberOneSum + numberTwoSum - leastCommonMultipleSum).ToString();
+            return (numberOneSum + numberTwoSum - leastCommonMultipleSum).ToString(CultureInfo.InvariantCulture);
         }
 
         /// <summary>
@@ -71,11 +72,11 @@ namespace ProjectEuler.Problems
         /// <param name="maximumValue"> The upper bound of divisible numbers </param>
         /// <param name="divisor"> The divisor </param>
         /// <returns></returns>
-        private static int SumOfAllDivisibleNumbers(int maximumValue, int divisor)
+        private static double SumOfAllDivisibleNumbers(int maximumValue, int divisor)
         {
             var divisibleNumberCount = (maximumValue - 1) / divisor;
             
-            return divisor * divisibleNumberCount * (divisibleNumberCount + 1) / 2;
+            return (double) divisor * divisibleNumberCount * (divisibleNumberCount + 1) / 2;
         }
 
         /// <summary>
